@@ -14,17 +14,17 @@ Clone or download project.
 
 (If you are using Windows, make sure that there are no special characters or diacritical characters in the directory name;
 
-if your username contains such characters, select another directory, for example, 'C:\dir'.)
+if your username contains such characters, select another directory, for example, `C:\dir`.)
 
 Open console in folder project and run command 'python -m venv myvenv' to create virtual environment.
 
-Launch the virtual environment by doing 'myvenv\Scripts\activate'
+Launch the virtual environment by doing `myvenv\Scripts\activate`
 
-Now run 'myvenv\Scripts\pip install -r requirements.txt' to install Django
+Now run `myvenv\Scripts\pip install -r requirements.txt` to install Django
 
-Run server 'mevenv\Scripts\python manage.py runserver 0:8000
+Run server `mevenv\Scripts\python manage.py runserver 0:8000`
 
-And open your browser on the page '127.0.0.1:8000/calc'
+And open your browser on the page `127.0.0.1:8000/calc`
 
 -------------------------------------------------------------------------------------------------------
 
@@ -42,14 +42,14 @@ Python должен быть версии 3
 
 (Если вы используете Windows, убедитесь, что в имени каталога нет специальных символов или диакритических символов;
 
-если ваше имя пользователя содержит такие символы, выберите другой каталог, например, 'C:\dir'.)
+если ваше имя пользователя содержит такие символы, выберите другой каталог, например, `C:\dir`.)
 
-Откройте консоль в папке проекта и выполните команду 'python -m venv myvenv', чтобы создать виртуальную среду.
+Откройте консоль в папке проекта и выполните команду `python -m venv myvenv`, чтобы создать виртуальную среду.
 
-Запустите виртуальную среду, выполнив команду 'myvenv\Scripts\activate'
+Запустите виртуальную среду, выполнив команду `myvenv\Scripts\activate`
 
-Теперь запустите 'myvenv\Scripts\pip install -r requirements.txt', чтобы установить Django
+Теперь запустите `myvenv\Scripts\pip install -r requirements.txt`, чтобы установить Django
 
-Запустите сервер 'mevenv\Scripts\python manage.py runserver 0:8000'
+Запустите сервер `mevenv\Scripts\python manage.py runserver 0:8000`
 
-И откройте браузер на странице '127.0.0.1:8000/calc'.
+И откройте браузер на странице `127.0.0.1:8000/calc`.
