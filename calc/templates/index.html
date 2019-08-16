@@ -1,0 +1,148 @@
+<html lang="en" >
+
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="user-scalable=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+    <!-- https://codepen.io/joseluismurillorios/pen/ygmBwo -->
+  
+</head>
+
+<body>
+    <!-- make menu -->
+
+    <form action="" method="post" id="form">
+        {% csrf_token %}
+        
+        <div class="container">
+            <div class="calc">
+                <div class="calc_display">
+                    <label for="" class="calc_display-query">
+                        <input class="calc_display-query_text" id="MessageDisplay" type="text" name="messageDisplay" placeholder="Enter a expression below" 
+                        {% if error_message %}
+                            value="{{ error_message }}"
+                        {% else %}
+                            value=""
+                        {% endif %}
+                        readonly="true">
+                    </label>
+                    <label for="" class="calc_display-input">
+                        <input class="calc_display-query_text" id="UserInput" type="text" name="digitsDisplay"
+                        {% if result_value %}
+                            value="{{ result_value|escape }}"
+                        {% else %}
+                            value=""
+                        {% endif %}
+                        readonly="true">
+                    </label>
+                </div>
+                <div class="calc_wrapper" id="CalcNumpad">
+                    <div class="calc_buttons main_controls">
+                        <div class="calc_buttons-row">
+                            <label data-val="^2" class="calc_button core ">
+                                    <span class="calc_text">x<span class="sup calc_color">2</span></span>
+                            </label>
+                            <label data-val="(" class="calc_button core">
+                                <span class="calc_text">(</span>
+                            </label>
+                            <label data-val=")" class="calc_button core">
+                                <span class="calc_text">)</span>
+                            </label>
+                            <div data-val="C" class="calc_button clear main" id="Clear" readonly="readonly">
+                                    <span class="calc_text noselect">C</span>
+                            </div>
+                            <label data-val="del" class="calc_button delete" id="Delete">
+                                <span class="calc_text">Del</span>
+                            </label>
+                        </div>
+                        <!--end:row-->
+                        <div class="calc_buttons-row">
+                            <label data-val="^3" class="calc_button core ">
+                                    <span class="calc_text">x<span class="sup calc_color">3</span></span>
+                            </label>
+                            <label data-val="7" class="calc_button digit">
+                                <span class="calc_text">7</span>
+                            </label>
+                            <label data-val="8" class="calc_button digit">
+                                <span class="calc_text">8</span>
+                            </label>
+                            <label data-val="9" class="calc_button digit">
+                                <span class="calc_text">9</span>
+                            </label>
+                            <label data-val="/" class="calc_button core">
+                                <span class="calc_text">&divide;</span>
+                            </label>
+                        </div>
+                        <!--end:row-->
+                        <div class="calc_buttons-row">
+                            <label data-val="^" class="calc_button core">
+                                <span class="calc_text">x<span class="sup calc_color">y</span></span>
+                            </label>
+                            <label data-val="4" class="calc_button digit">
+                                <span class="calc_text">4</span>
+                            </label>
+                            <label data-val="5" class="calc_button digit">
+                                <span class="calc_text">5</span>
+                            </label>
+                            <label data-val="6" class="calc_button digit">
+                                <span class="calc_text">6</span>
+                            </label>
+                            <label data-val="*" class="calc_button core">
+                                <span class="calc_text">&times;</span>
+                            </label>
+                        </div>
+                        <!--end:row-->
+                        <div class="calc_buttons-row">
+                            <label data-val="!" class="calc_button core">
+                                <span class="calc_text">x<i class="calc_color">!</i></span>
+                            </label>
+                            <label data-val="1" class="calc_button digit">
+                                <span class="calc_text">1</span>
+                            </label>
+                            <label data-val="2" class="calc_button digit">
+                                <span class="calc_text">2</span>
+                            </label>
+                            <label data-val="3" class="calc_button digit">
+                                <span class="calc_text">3</span>
+                            </label>
+                            <label data-val="-" class="calc_button core">
+                                <span class="calc_text">&#8211;</span>
+                            </label>
+                        </div>
+                        <!--end:row-->
+                        <div class="calc_buttons-row">
+                            <label data-val="." class="calc_button core">
+                                <span class="calc_text calc_color">.</span>
+                            </label>
+                            <label data-val="0" class="calc_button digit">
+                                <span class="calc_text">0</span>
+                            </label>
+                            <label data-val="000" class="calc_button digit">
+                                    <span class="calc_text">000</span>
+                            </label>
+                            <label data-val="=" class="calc_button eval" id="Eval">
+                                <span class="calc_text">=</span>
+                            </label>
+                            <label data-val="+" class="calc_button core">
+                                <span class="calc_text">+</span>
+                            </label>
+                        </div>
+                        <!--end:row-->
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+    </form>
+
+</body>
